@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="author" content="Sofía Suárez Fernández UO270149" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <title>Van Gogh</title>
+
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Vincent van Gogh</h1>
+    </header>
+
+    <nav>
+        <ul id="menu">
+            <li><a href="index.html">Biografía</a></li>
+            <li><a href="driving.html">Obras</a></li>
+            <li><a class="active" href="license.html">Galería</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1/6</div>
+            <img src="multimedia/terraza.jpg" style="width: 100%">
+            <div class="text">Terraza de café por la noche</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">2/6</div>
+            <img src="multimedia/noche.jpg" style="width: 100%">
+            <div class="text">La noche estrellada</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">3/6</div>
+            <img src="multimedia/almendro.jpg" style="width: 100%">
+            <div class="text">Almendro en flor</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">4/6</div>
+            <img src="multimedia/driving.jpg" style="width: 100%">
+            <div class="textImportante">ESTOS VAIS A SER VOSOTROS PRONTO PORQUE...</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">5/6</div>
+            <img src="multimedia/license.jpg" style="width: 100%">
+            <div class="textImportante">...ALGUIEN APROBÓ EL EXAMEN DE CONDUCIR POR FIIIN</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">6/6</div>
+            <img src="multimedia/APTO.jpg" style="width: 100%">
+            <div class="textImportante">ME OÍS GRITAR???</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div style="text-align: center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+
+    <footer>
+        <!--Enlaces a los validadores-->
+        <a href="https://validator.w3.org">
+            <img class="validator" src="images/HTML5.png" alt=" HTML5 Válido!" /></a>
+
+        <a href="http://jigsaw.w3.org/css-validator/">
+            <img class="validator" src="images/CSS3.png" alt="CSS Válido!" /></a>
+    </footer>
+</body>
+
+</html>
